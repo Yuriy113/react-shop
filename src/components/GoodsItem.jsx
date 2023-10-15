@@ -11,7 +11,7 @@ function GoodsItem(props) {
         <p>{displayDescription ? displayDescription : displayName}</p>
       </div>
       <div className="card-action">
-        <button onClick={() => props.addToCart({ mainId, displayName })} className="btn">
+        <button onClick={() => props.addToCart({ mainId, displayName, price })} className="btn">
           Купить{' '}
         </button>
         <span className="right" style={{ fontSize: '1.8rem' }}>

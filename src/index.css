@@ -46,3 +46,41 @@ nav {
     bottom: unset;
   }
 }
+
+.basket {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  min-width: 360px;
+  box-shadow: 4px 4px 8px 9px rgba(34, 60, 80, 0.47);
+
+  animation: show 500ms ease-in-out;
+}
+
+@keyframes show {
+  from {
+    top: 0%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+.basket > .collection {
+  margin: 0;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+.close-basket {
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
