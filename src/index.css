@@ -84,3 +84,19 @@ nav {
   right: 0.5rem;
   top: 0.5rem;
 }
+
+#toast-container {
+  top: 3rem !important;
+  animation: fade-in 250ms ease-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}

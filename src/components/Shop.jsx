@@ -5,12 +5,14 @@ import GoodsList from './GoodsList';
 import Preloader from './Preloader';
 import Cart from './Cart';
 import BasketList from './BasketList';
+import Alert from './Alert';
 
 function Shop() {
   const [goods, setGoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [order, setOrder] = useState([]);
   const [isBasketVisible, setBasketVisible] = useState(false);
+  const [alertName, setAlertName] = useState('');
 
   function incrementOrder(id) {
     const newOrder = order.map((item) => {
@@ -70,6 +72,12 @@ function Shop() {
 
       setOrder(newOrder);
     }
+
+    setAlertName(good.displayName);
+  }
+
+  function closeAlert() {
+    setAlertName('');
   }
 
   useEffect(function getGoods() {
@@ -98,6 +106,7 @@ function Shop() {
           decrementOrder={decrementOrder}
         />
       ) : null}
+      {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
     </main>
   );
 }
